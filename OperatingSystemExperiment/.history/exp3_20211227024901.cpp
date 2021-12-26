@@ -28,6 +28,16 @@ struct PCB
 
 	int number_t; //时间片轮次
 };
+struct PCB_q_node
+{
+	PCB_q_node *before; //队列中的下一个PCB
+	PCB *p;				//PCB
+	PCB_q_node *next;	//队列中的上一个PCB
+};
+struct PCB_q
+{
+	PCB_q_node *head;
+};
 
 void init(int n, PCB p[]) //初始化
 {
@@ -42,6 +52,26 @@ void init(int n, PCB p[]) //初始化
 		p[i].sign_start_t = false;
 	}
 }
+
+// void queue_by_time(PCB p[], int n, PCB_q *q)
+// {
+// 	PCB_q_node *firstnode = (PCB_q_node *)malloc(sizeof(PCB_q_node));
+// 	q->head = firstnode;
+// 	firstnode->before = NULL;
+// 	PCB_q_node *node_now = firstnode;
+// 	for (int i = 0; i < n; i++)
+// 	{
+// 		node_now->p = &p[i];
+// 		for (int j = i + 1; j < n; j++)
+// 		{
+// 			if (node_now->p->time_start > p[j].time_start)
+// 			{
+// 				/* code */
+// 			}
+// 		}
+// 		PCB_q_node *node = (PCB_q_node *)malloc(sizeof(PCB_q_node));
+// 	}
+// }
 
 void _FCFS(PCB p[], int n) //时间片轮转，基于先来先服务
 {

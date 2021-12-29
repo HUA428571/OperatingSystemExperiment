@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="exp1.cpp">
+    <ClCompile Include="exp1.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="exp4.cpp">
@@ -24,7 +24,7 @@
     <ClCompile Include="exp3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="exp2.cpp">
+    <ClCompile Include="exp2.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define SIZE_RESOURCE_TYPE 5		 //系统提供的资源种类数量
 #define SIZE_RESOURCR_NUMBER 360	 //系统每种资源的提供量
@@ -13,7 +14,7 @@
 #define MULTI_MIN_FIRST_ALLOCATE 0.4 //首次分配占所需资源的占比（最小值）
 
 void init(int process_resource_need[][SIZE_RESOURCE_TYPE],
-		  int n)
+	int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -24,8 +25,8 @@ void init(int process_resource_need[][SIZE_RESOURCE_TYPE],
 	}
 }
 void init_first_allocate(int process_resource_need[][SIZE_RESOURCE_TYPE],
-						 int process_resource_0[][SIZE_RESOURCE_TYPE],
-						 int n)
+	int process_resource_0[][SIZE_RESOURCE_TYPE],
+	int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -37,8 +38,8 @@ void init_first_allocate(int process_resource_need[][SIZE_RESOURCE_TYPE],
 	}
 }
 int init_system_resource_left(int process_resource_need[][SIZE_RESOURCE_TYPE],
-							  int system_resource_left[SIZE_RESOURCE_TYPE],
-							  int n)
+	int system_resource_left[SIZE_RESOURCE_TYPE],
+	int n)
 {
 	for (int i = 0; i < SIZE_PROCESS_NUMBER; i++)
 	{
@@ -56,7 +57,7 @@ int init_system_resource_left(int process_resource_need[][SIZE_RESOURCE_TYPE],
 }
 
 void print_process(int process_resource_need[][SIZE_RESOURCE_TYPE],
-				   int n)
+	int n)
 {
 	printf("-------------------------------------------------\n");
 	printf("进程号\t");
@@ -78,10 +79,10 @@ void print_process(int process_resource_need[][SIZE_RESOURCE_TYPE],
 }
 
 void check(int process_resource_need[][SIZE_RESOURCE_TYPE],
-		   int process_resource_0[][SIZE_RESOURCE_TYPE],
-		   int system_resource_left[SIZE_RESOURCE_TYPE],
-		   bool process_finished[SIZE_PROCESS_NUMBER],
-		   int n)
+	int process_resource_0[][SIZE_RESOURCE_TYPE],
+	int system_resource_left[SIZE_RESOURCE_TYPE],
+	bool process_finished[SIZE_PROCESS_NUMBER],
+	int n)
 {
 	int available_next = 0;
 	bool flag_available = true;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-//#define PRINT_DETAIL			//输出详细信息
+//#define PRINT_DETAIL		 //输出详细信息
 #define MAX_PAGE_NUM 8			//最大页面号
 #define ARRAY_LIST_LENGTH 10000 //页面序列的数量
 #define PHYSICAL_BLOCK_NUM 5	//物理块数量
